@@ -1,0 +1,28 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+    ## 等待队列长度，默认100。
+    accept-count: 10
+    ## 最大工作线程数，默认200。（4核8g内存，线程数经验值800，操作系统做线程之间的切换调度是有系统开销的，所以不是越多越好。）
+    max-threads: 10
+    ## 最小工作空闲线程数，默认10。（适当增大一些，以便应对突然增长的访问量）
+    min-spare-threads: 1
+  servlet:
+    context-path: /sso
+    port: 9000
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ratel
+    data-username: root
+    data-password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+
+swagger2:
+  basePackage: 'com.ratel.sso.user.controller'
+  address: swagger
+
+logging:
+  level: debug

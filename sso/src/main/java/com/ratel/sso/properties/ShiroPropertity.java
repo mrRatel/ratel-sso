@@ -9,5 +9,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @Data
 @ConfigurationProperties("shiro")
-public class ShiroProperties {
+public class ShiroPropertity {
 }
