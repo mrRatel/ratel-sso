@@ -6,5 +6,5 @@ package com.ratel.sso.constant;
  */
 public interface ApiConstant {
     final String USER_API_SUFFIX = "user";
-    final String LOGIN = "login/${redirectUrl}";
+    final String LOGIN = "login";
 }

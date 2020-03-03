@@ -26,7 +26,6 @@ public class UserController {
     @Autowired
     private SysUserService userService;
 
-    @PostMapping(ApiConstant.LOGIN)
     @ApiOperation("用户登录接口")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "username", value = "用户名", defaultValue = "ratel", required = true),
@@ -34,6 +33,7 @@ public class UserController {
             @ApiImplicitParam(name = "autoCode", value = "验证码", defaultValue = "1234", required = true)
     }
     )
+    @PostMapping(ApiConstant.LOGIN)
     public WebResult login(@RequestBody LoginParam loginParam){
         return WebResultFactory.success(userService.getUserByUserName(loginParam.getUsername()));
     }
